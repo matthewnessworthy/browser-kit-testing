@@ -3,6 +3,7 @@
 namespace Laravel\BrowserKitTesting;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Testing\Concerns\InteractsWithConsole;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -19,7 +20,7 @@ abstract class TestCase extends BaseTestCase
         Concerns\MakesHttpRequests,
         Concerns\ImpersonatesUsers,
         Concerns\InteractsWithAuthentication,
-        Concerns\InteractsWithConsole,
+        InteractsWithConsole,
         Concerns\InteractsWithDatabase,
         Concerns\InteractsWithExceptionHandling,
         Concerns\InteractsWithSession,

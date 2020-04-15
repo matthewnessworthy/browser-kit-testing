@@ -3,7 +3,7 @@
 namespace Laravel\BrowserKitTesting\Tests\Unit;
 
 use Illuminate\Contracts\Console\Kernel;
-use Laravel\BrowserKitTesting\Concerns\InteractsWithConsole;
+use Illuminate\Foundation\Testing\Concerns\InteractsWithConsole;
 use Laravel\BrowserKitTesting\Concerns\InteractsWithDatabase;
 use Laravel\BrowserKitTesting\Tests\TestCase;
 
@@ -102,6 +102,7 @@ class InteractsWithDatabaseTest extends TestCase
      */
     public function run_seed()
     {
+        $this->withoutMockingConsoleOutput();
         $this->app[Kernel::class] = new class {
             public function call()
             {
